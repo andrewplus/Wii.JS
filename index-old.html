@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Wii Menu</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:500" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </head>
+
+  <body>
+    <div class="main-menu">
+      <div class="top-section">
+        <div class="channels">
+          <div class="channels-container">
+            <div class="col">
+              <div class="channel-icon occupied"><img src="assets/images/miichannel.jpg"><div class="hover" id="1" onmouseover="hover()" onclick="zip()" data-img="assets/images/miichannel.jpg"></div></div>
+              <div class="channel-icon occupied"><img src="assets/images/miichannel.jpg"><div class="hover" id="2" onmouseover="hover()" onclick="zip()" data-img="assets/images/miichannel.jpg"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="3"></div></div>
+            </div>
+
+            <div class="col">
+              <div class="channel-icon occupied"><img src="assets/images/miichannel.jpg"><div class="hover" id="4" onmouseover="hover()" onclick="zip()" data-img="assets/images/miichannel.jpg"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="5"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="6"></div></div>
+            </div>
+
+            <div class="col">
+              <div class="channel-icon occupied"><img src="assets/images/miichannel.jpg"><div class="hover" id="7" onmouseover="hover()" onclick="zip()" data-img="assets/images/miichannel.jpg"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="8"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="9"></div></div>
+            </div>
+
+            <div class="col">
+              <div class="channel-icon occupied"><img src="assets/images/miichannel.jpg"><div class="hover" id="10" onmouseover="hover()" onclick="zip()" data-img="assets/images/miichannel.jpg"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="12"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="12"></div></div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="bottom-section">
+        <div class="bottom-title"></div>
+
+        <div class="left-button-container">
+          <div class="left-button"></div>
+          <div class="wii-button corner-button" onmouseover="hover()"></div>
+        </div>
+
+        <div class="date"></div>
+
+        <div class="right-button-container">
+          <div class="right-button"></div>
+          <div class="mail-button corner-button" onmouseover="hover()"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="splash-screen">
+
+    </div>
+
+    <div class="splash-bar">
+      <div class="splash-buttons">
+        <a href="javascript:void(0)" class="btn menu-btn" onmouseover="hover()" onclick="back()">Wii Menu</a>
+        <a href="javascript:void(0)" class="btn" onmouseover="hover()" onclick="select()">Start</a>
+      </div>
+    </div>
+
+    <div class="border-topleft border"></div>
+    <div class="border-topright border"></div>
+    <div class="border-bottomleft border"></div>
+    <div class="border-bottomright border"></div>
+
+    <div class="screen-message">
+      <p>It has been detected that your screen resolution may not be compatible with this project. This project is very experiental and as a result, does not scale to some smaller screens. If you're alright with the layout looking a little off, click anywhere to close this message.</p>
+    </div>
+
+    <div class="sfx">
+      <!-- <iframe src="assets/audio/bgmusic.html" allow="autoplay" style="display:none" id="music"></iframe> -->
+      <audio src="assets/audio/startup.mp3" controls autoplay></audio>
+      <audio id="bg-music" src="assets/audio/bg-music.mp3" loop controls autoplay></audio>
+      <audio id="hover" src="assets/audio/button-hover.mp3"></audio>
+      <audio id="select" src="assets/audio/button-select.mp3"></audio>
+      <audio id="zip" src="assets/audio/zip.mp3"></audio>
+      <audio id="back" src="assets/audio/back.mp3"></audio>
+    </div>
+  </body>
+</html>

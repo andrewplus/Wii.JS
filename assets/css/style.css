@@ -1,0 +1,566 @@
+/* main menu */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+body, html {
+  margin: 0;
+  overflow: hidden;
+  background-color: lightgrey;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  transition: 900ms;
+  cursor: url(../images/cursor.png), auto;
+}
+
+body.channel-splash {
+  background-color: black;
+}
+
+.main-menu {
+  margin: 0;
+  transition: transform 900ms, opacity 400ms, background-color 900ms, visibility 900ms;
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../images/bg-pattern.png);
+  background-color: lightgrey;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-menu.channel-splash {
+  transform: scale(4);
+  opacity: 0;
+  background-color: black;
+  background-image: none !important;
+  visibility: hidden;
+}
+
+.top-section {
+  height: calc(100% - 219px);
+  padding: 80px;
+  padding-top: 3vh;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+.pages {
+  width: auto;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.page {
+  display: inline-block;
+}
+
+.bottom-section {
+  height: 219px;
+  background: #d2d6db;
+  background-image: url(../images/bottom-bg.png);
+}
+
+.col {
+  width: 24%;
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.col.first {
+  margin-left: 19px;
+}
+
+.channel-icon {
+  display: block;
+  width: 20.2vw;
+  height: 11.1vw;
+  margin-top: 2vh;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.channel-icon.blank {
+  background-image: url(../images/channel-spritesheet.png);
+  background-size: calc(100% * 3) 100%;
+}
+
+.channel-icon.blank:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20.2vw;
+  height: 11.1vw;
+  content: '';
+  background-image: url(../images/channel-wiilogo.png);
+  background-size: 100% 100%;
+}
+
+.channel-icon:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20.2vw;
+  height: 11.1vw;
+  content: '';
+  background-image: url(../images/channel-border.png);
+  background-size: 100% 100%;
+}
+
+.channel-icon.occupied .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20.2vw;
+  height: 11.1vw;
+  content: '';
+  background-image: url(../images/channel-hover.png);
+  background-size: 100% 100%;
+  z-index: 99;
+  opacity: 0;
+  transition: 400ms ease;
+  transform: scale(0.94);
+}
+
+.channel-icon.occupied .hover:hover {
+  display: block;
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.channel-splash .channel-icon.blank {
+  background-position: 0 0 !important;
+}
+
+.channel-splash .channel-icon.occupied .hover {
+  display: none !important;
+}
+
+.channel-icon img {
+  display: inherit;
+  width: inherit;
+  height: inherit;
+  -webkit-clip-path: polygon(2% 7%, 6% 2%, 52% 1%, 95% 3%, 98% 8%, 100% 49%, 98% 92%, 95% 97%, 50% 99%, 5% 97%, 2% 93%, 0 50%);
+  clip-path: polygon(2% 7%, 6% 2%, 52% 1%, 95% 3%, 98% 8%, 100% 49%, 98% 92%, 95% 97%, 50% 99%, 5% 97%, 2% 93%, 0 50%);
+}
+
+.bottom-title {
+  background-image: url(../images/bottom-title.png);
+  width: 1200px;
+  height: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left-button {
+  position: absolute;
+  bottom: 42px;
+  left: 0;
+  background-image: url(../images/left-button.png);
+  width: 185px;
+  height: 135px;
+  background-size: 100% 100%;
+}
+
+.wii-button {
+  background-image: url(../images/wii-button.png);
+  width: 100px;
+  height: 105px;
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  background-size: 100% 100%;
+}
+
+.right-button {
+  position: absolute;
+  bottom: 42px;
+  right: 0;
+  background-image: url(../images/right-button.png);
+  width: 185px;
+  height: 135px;
+  background-size: 100% 100%;
+}
+
+.mail-button {
+  background-image: url(../images/mail-button.png);
+  width: 100px;
+  height: 105px;
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  background-size: 100% 100%;
+}
+
+.corner-button {
+  transition: 300ms;
+}
+
+.corner-button:hover {
+  transform: scale(1.1);
+}
+
+.date {
+  position: absolute;
+  color: #84868a;
+  font-family: 'Asap', sans-serif;
+  bottom: 32px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 40px;
+  letter-spacing: -1px;
+}
+
+/* channel splash screen */
+
+.splash-screen {
+  position: absolute;
+  box-sizing: border-box;
+  height: 80vh;
+  width: 100%;
+  position: absolute;
+  top: -80vh;
+  left: 0;
+  background-size: cover;
+  transition: opacity 500ms ease, transform 500ms ease;
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+.channel-splash .splash-screen {
+  top: 0;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.splash-bar {
+  height: 20vh;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  transition: bottom 500ms ease, opacity 500ms ease;
+  border-top: solid 2px black;
+  background-image: url(../images/splash-bar.png);
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  bottom: -20vh;
+  left: 0;
+  opacity: 0;
+}
+
+.channel-splash .splash-bar {
+  bottom: 0;
+  opacity: 1;
+}
+
+.border-topleft {
+  background-image: url(../images/border-topleft.png);
+  width: 306px;
+  height: 230px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 9991;
+}
+
+.border-topright {
+  background-image: url(../images/border-topright.png);
+  width: 306px;
+  height: 230px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: 9992;
+}
+
+.border-bottomleft {
+  background-image: url(../images/border-bottomleft.png);
+  width: 306px;
+  height: 230px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 9993;
+}
+
+.border-bottomright {
+  background-image: url(../images/border-bottomright.png);
+  width: 306px;
+  height: 230px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 9994;
+}
+
+.border {
+  display: none;
+}
+
+.channel-splash .border {
+  display: block;
+}
+
+.splash-buttons {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 4.1vh;
+  height: 20vh;
+  box-sizing: border-box;
+}
+
+/* changes for channel -> menu transition */
+
+.splash-switch .main-menu {
+  transition: transform 400ms;
+}
+
+.splash-switch .splash-screen {
+  top: 0;
+}
+
+/* buttons */
+
+.btn {
+  background-image: url(../images/btn-texture.png);
+  background-size: auto 100%;
+  height: 5vw;
+  width: 15vw;
+  display: inline-block;
+  position: relative;
+  margin-left: 4.5vw;
+  margin-right: 4.5vw;
+  text-decoration: none;
+  line-height: 100%;
+  font-family: 'Asap', sans-serif;
+  color: #474747 !important;
+  font-size: 2.2vw;
+  line-height: calc(4.5vw + 5px);
+  cursor: url(../images/cursor.png), auto !important;
+  transform: scale(1);
+  transition: 150ms ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:before {
+  background-image: url(../images/btn-left.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 5vw;
+  width: 2.2vw;
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: -2.2vw;
+}
+
+.btn:after {
+  background-image: url(../images/btn-right.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 5vw;
+  width: 2.2vw;
+  display: inline-block;
+  content: '';
+  position: absolute;
+  right: -2.2vw;
+}
+
+
+/* Unsupported display */
+
+.screen-message {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: sans-serif;
+  top: 20px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.screen-message.hidden {
+  visibility: none;
+  top: 100vh;
+}
+
+.screen-message p {
+  margin-top: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-height: 469px) , screen and (max-width: 1220px) , screen and (width: 1280px) and (height: 1024px) {
+    .screen-message {
+        display: block !important;
+    }
+}
+
+/* SFX */
+
+.sfx {
+  display: none;
+}
+
+/* Animation */
+
+.channel-icon.blank {
+  -webkit-animation: play 0.3s steps(3) infinite;
+  -moz-animation: play 0.3s steps(3) infinite;
+  -ms-animation: play 0.3s steps(3) infinite;
+  -o-animation: play 0.3s steps(3) infinite;
+  animation: play 0.3s steps(3) infinite;
+}
+
+@-webkit-keyframes play {
+  from { background-position-x: 0px; }
+  to { background-position-x: calc(100% * 3 - 1px); }
+}
+
+@-moz-keyframes play {
+  from { background-position-x: 0px; }
+  to { background-position-x: calc(100% * 3 - 1px); }
+}
+
+@-ms-keyframes play {
+  from { background-position-x: 0px; }
+  to { background-position-x: calc(100% * 3 - 1px); }
+}
+
+@-o-keyframes play {
+  from { background-position-x: 0px; }
+  to { background-position-x: calc(100% * 3 - 1px); }
+}
+
+@keyframes play {
+  from { background-position-x: 0px; }
+  to { background-position-x: calc(100% * 3 - 1px); }
+}
+
+/* mini mode */
+
+@media only screen and (max-height: 718px) {
+  .top-section {
+    height: calc(100% - 130px);
+  }
+
+  .bottom-section {
+    height: 130px;
+    background-image: url(../images/mini-bottom-bg.png);
+  }
+
+  .left-button-container {
+    transform: scale(0.6);
+    transform-origin: left;
+  }
+
+  .right-button-container {
+    transform: scale(0.6);
+    transform-origin: right;
+  }
+
+  .left-button, .right-button {
+    bottom: 180px;
+  }
+
+  .corner-button {
+    bottom: 197px;
+	}
+
+  .bottom-title {
+    transform-origin: top;
+    transform: scale(0.65);
+  }
+
+  .date {
+    font-size: 22px;
+    bottom: 17px;
+  }
+}
+
+@media only screen and (max-height: 826px) {
+  .top-section {
+    padding-top: 1em !important;
+  }
+}
+
+@media only screen and (max-height: 640px) {
+  .channels {
+    transform: scale(0.9);
+  }
+}
+
+/*
+@media only screen and (max-height: 600px) {
+  .channels {
+    transform: scale(0.8);
+		transform-origin: top;
+  }
+}
+
+@media only screen and (max-height: 524px) {
+  .channels {
+    transform: scale(0.7);
+		transform-origin: top;
+  }
+} */
+
+/* widescreen fixes */
+
+@media only screen and (min-width: 1720px) {
+  .top-section {
+    transform: scale(0.9);
+    padding-top: 0em !important;
+  }
+}
+
+/******************/
+/*    testing     */
+/* needs 2b moved */
+/******************/
+
+.channels {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 1920px) {
+  .channel-icon, .channel-icon *, .channel-icon:after, .channel-icon:before {
+    width: 387px !important;
+    height: 213px !important;
+  }
+}
+
+@media only screen and (max-height: 47vw) {
+  .channel-icon, .channel-icon *, .channel-icon:after, .channel-icon:before {
+    width: 40vh !important;
+    height: 22.5vh !important;
+    max-width: 439px !important;
+    max-height: 247px !important;
+  }
+
+  .channels-container {
+
+  }
+}
