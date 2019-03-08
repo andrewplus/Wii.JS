@@ -4,7 +4,9 @@
     <title>Wii.JS</title>
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/universal.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/settings.css">
     <link href="https://fonts.googleapis.com/css?family=Asap:500" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -14,5 +16,16 @@
 
   <body>
     <div class="app"></div>
+    <div class="black"></div>
+
+    <div class="sfx">
+      <!-- <iframe src="assets/audio/bgmusic.html" allow="autoplay" style="display:none" id="music"></iframe> -->
+      <audio src="assets/audio/startup.mp3" controls autoplay></audio>
+      <audio id="bg-music" src="assets/audio/bg-music.mp3" loop controls autoplay></audio>
+      <audio id="hover" src="assets/audio/button-hover.mp3"></audio>
+      <audio id="select" src="assets/audio/button-select.mp3"></audio>
+      <audio id="zip" src="assets/audio/zip.mp3"></audio>
+      <audio id="back" src="assets/audio/back.mp3"></audio>
+    </div>
   </body>
 </html>

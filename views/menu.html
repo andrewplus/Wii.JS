@@ -32,7 +32,7 @@
 
     <div class="left-button-container">
       <div class="left-button"></div>
-      <div class="wii-button corner-button" onmouseover="hover()"></div>
+      <div class="wii-button corner-button viewchange" onmouseover="hover()" data-view="settings-main" data-transition="fade"></div>
     </div>
 
     <div class="date"></div>
@@ -62,14 +62,4 @@
 
 <div class="screen-message">
   <p>It has been detected that your screen resolution may not be compatible with this project. This project is very experiental and as a result, does not scale to some smaller screens. If you're alright with the layout looking a little off, click anywhere to close this message.</p>
-</div>
-
-<div class="sfx">
-  <!-- <iframe src="assets/audio/bgmusic.html" allow="autoplay" style="display:none" id="music"></iframe> -->
-  <audio src="assets/audio/startup.mp3" controls autoplay></audio>
-  <audio id="bg-music" src="assets/audio/bg-music.mp3" loop controls autoplay></audio>
-  <audio id="hover" src="assets/audio/button-hover.mp3"></audio>
-  <audio id="select" src="assets/audio/button-select.mp3"></audio>
-  <audio id="zip" src="assets/audio/zip.mp3"></audio>
-  <audio id="back" src="assets/audio/back.mp3"></audio>
 </div>

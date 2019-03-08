@@ -1,0 +1,146 @@
+/* settings */
+
+.settings {
+  background-color: black;
+  background-image: url(../images/settings-main-bg.png);
+  width: 100vw;
+  height: 100vh;
+}
+
+.settings-header {
+  background-color: black;
+  background: url(../images/settings-topbar.png);
+  height: 16vh;
+  width: 100vw;
+  background-size: 15px 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: -16vh;
+  transition: 300ms ease;
+}
+
+.settings-header.animate {
+  top: 0;
+}
+
+.settings-main .settings-header:after {
+  position: absolute;
+  background-image: url(../images/logo-white.svg);
+  width: 10vh;
+  height: 4.5vh;
+  content: '';
+  background-size: 100% 100%;
+  bottom: 2vh;
+  right: 12vw;
+  display: block;
+}
+
+.settings-footer {
+  background-color: black;
+  background: url(../images/settings-bottombar.png);
+  height: 21vh;
+  width: 100vw;
+  background-size: 8px 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: -21vh;
+  transition: 300ms ease;
+}
+
+.settings-footer.animate {
+  bottom: 0;
+}
+
+.settings-navcontainer {
+  position: absolute;
+  /*top: 20%;*/
+  top: -100vh;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: calc(50% - 60vh);
+  transition: top 300ms;
+}
+
+.settings-navcontainer.animate {
+  top: 20%;
+  opacity: 1;
+}
+
+.settings-content {
+  height: calc(100vh - 37vh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+.settings-navbtn {
+  width: 50vh;
+  height: 38vh;
+  background-image: url(../images/settings-main-nav.png);
+  background-color: initial;
+  background-size: 100% 100%;
+  display: inline-block;
+  position: relative;
+  transition: 300ms;
+}
+
+.settings-navbtn:hover {
+  transform: scale(1.1);
+}
+
+.settings-navbtn.left { margin-right: 10vh; } .settings-navbtn.right { margin-left: 10vh; }
+
+.settings-navbtn span.label {
+  position: absolute;
+  display: block;
+  bottom: 1vh;
+  height: 10vh;
+  line-height: 10vh;
+  color: #909090;
+  font-size: 3.8vh;
+  font-family: 'Asap', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.settings-navbtn.settings .icon {
+  background-image: url(../images/settings-icon.png);
+  width: 20vh;
+  height: 20vh;
+  background-size: 100% 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+}
+
+.settings-navbtn.info .icon {
+  background-image: url(../images/info-icon.png);
+  width: 20vh;
+  height: 20vh;
+  background-size: 100% 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+}
+
+.settings-footer .back {
+  position: absolute;
+  background-image: url(../images/settings-back.png);
+  width: 30vh;
+  height: 8vh;
+  content: '';
+  background-size: 100% 100%;
+  top: 6vh;
+  left: 12vw;
+  display: block;
+  transition: 150ms;
+}
+
+.settings-footer .back:hover {
+  transform: scale(1.1);
+}

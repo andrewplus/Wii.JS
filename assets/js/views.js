@@ -29,6 +29,14 @@ function loadViewContents(v, t) {
       // append date
       $(document).find( ".date" ).html( "<span> " + date + "</span>" );
     }
+
+    if (v === "settings-main") {
+      setTimeout(function(){
+        $( ".settings-navcontainer" ).addClass( "animate" );
+        $( ".settings-header" ).addClass( "animate" );
+        $( ".settings-footer" ).addClass( "animate" );
+      }, 300);
+    }
   });
   currentView = v;
 
