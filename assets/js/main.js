@@ -7,16 +7,6 @@ var delay = ( function() {
     };
 })();
 
-// distance between elements (center)
-function distanceBetween(elem1, elem2) {
-    var e1Rect = elem1.getBoundingClientRect();
-    var e2Rect = elem2.getBoundingClientRect();
-    var dx = (e1Rect.left+(e1Rect.right-e1Rect.left)/2) - (e2Rect.left+(e2Rect.right-e2Rect.left)/2);
-    var dy = (e1Rect.top+(e1Rect.bottom-e1Rect.top)/2) - (e2Rect.top+(e2Rect.bottom-e2Rect.top)/2);
-    var dist = Math.sqrt(dx * dx + dy * dy);
-    return dist;
-}
-
 // UI audio
 function hover(){
 	var audio = document.getElementById("hover");
@@ -75,8 +65,6 @@ $( document ).ready(function() {
 		$( ".main-menu" ).removeClass( "channel-splash" );
 		$( "body" ).removeClass( "channel-splash" );
 		$( "body" ).addClass( "splash-switch" );
-		var music = document.getElementById("bg-music");
-		music.play();
 		delay(function(){
 			$( "body" ).removeClass( "splash-switch" );
 		}, 900 );

@@ -4,6 +4,7 @@
   width: 100vw;
   height: 100vh;
   background-color: black;
+  display: block;
 }
 
 body, html {
@@ -23,13 +24,16 @@ body {
 }
 
 .black {
+  background-color: black;
   width: 100vw;
   height: 100vh;
   z-index: 999999999;
   top: 100vh;
   opacity: 0;
+  transition: opacity 300ms;
+  position: absolute;
 }
 
 .black.animate {
-  top: 0;
+  opacity: 1;
 }

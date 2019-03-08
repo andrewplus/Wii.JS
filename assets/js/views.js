@@ -2,6 +2,9 @@
 // partly recycled from another project of mine
 // very wip
 
+//variables
+transitionLength = 300;
+
 // functions
 
 function preloadImage(url) {
@@ -13,13 +16,14 @@ function changeView(v, t) {
   // transition in
   if (t != "none") {
     if (t == "fade") {
-      $(".app").fadeOut("fast", "linear", function() {
+      $( ".black" ).addClass( "animate" );
+      $( ".black" ).css( {"top" : "0"} );
+      setTimeout(function(){
         loadViewContents(v, t);
-      });
+      }, transitionLength);
     }
   } else {
     loadViewContents(v, t);
-    $(".app").show();
   }
 }
 
@@ -45,9 +49,25 @@ function loadViewContents(v, t) {
         // transition out
         if (t != "none") {
           if (t == "fade") {
-            $(".app").fadeIn( "fast", "linear" );
+            $( ".black" ).removeClass( "animate" );
+            if (v === "menu") {
+              // play menu music
+              var music = document.getElementById("bg-music");
+            	music.play();
+
+              // play startup sound if it's the first time
+              if (previousView === "default") {
+                var music = document.getElementById("startup");
+              	music.play();
+              }
+            }
+            setTimeout(function(){
+              $( ".black" ).css( {"top" : "100vh"} );
+            }, transitionLength);
           }
         }
+
+        console.log("yeet");
       });
     }, 100);
   });
@@ -59,7 +79,7 @@ $( document ).ready(function() {
 
   currentView = "default";
   previousView = "default";
-  $(".app").hide();
+  $(".black").show();
 
   // view change on click
   $("body").on("click", ".viewchange", function() {
