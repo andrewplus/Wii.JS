@@ -26,7 +26,7 @@ function changeView(v, t) {
 function loadViewContents(v, t) {
   $(".app").load("views/" + v + ".html", function() {
     setTimeout(function(){
-      $('.app').imagesLoaded( { background: '.app' }, function() {
+      $('.app').imagesLoaded( { background: '*' }, function() {
         if (v === "menu") {
           // append date
           $(document).find( ".date" ).html( "<span> " + date + "</span>" );
