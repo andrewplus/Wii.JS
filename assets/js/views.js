@@ -25,29 +25,31 @@ function changeView(v, t) {
 
 function loadViewContents(v, t) {
   $(".app").load("views/" + v + ".html", function() {
-    $('.app').imagesLoaded( { background: '.app' }, function() {
-      if (v === "menu") {
-        // append date
-        $(document).find( ".date" ).html( "<span> " + date + "</span>" );
-      }
-
-      if (v === "settings-main") {
-        setTimeout(function(){
-          $( ".settings-navcontainer" ).addClass( "animate" );
-          $( ".settings-header" ).addClass( "animate" );
-          $( ".settings-footer" ).addClass( "animate" );
-        }, 300);
-      }
-
-      currentView = v;
-
-      // transition out
-      if (t != "none") {
-        if (t == "fade") {
-          $(".app").fadeIn( "fast", "linear" );
+    setTimeout(function(){
+      $('.app').imagesLoaded( { background: '.app' }, function() {
+        if (v === "menu") {
+          // append date
+          $(document).find( ".date" ).html( "<span> " + date + "</span>" );
         }
-      }
-    });
+
+        if (v === "settings-main") {
+          setTimeout(function(){
+            $( ".settings-navcontainer" ).addClass( "animate" );
+            $( ".settings-header" ).addClass( "animate" );
+            $( ".settings-footer" ).addClass( "animate" );
+          }, 300);
+        }
+
+        currentView = v;
+
+        // transition out
+        if (t != "none") {
+          if (t == "fade") {
+            $(".app").fadeIn( "fast", "linear" );
+          }
+        }
+      });
+    }, 100);
   });
 }
 
