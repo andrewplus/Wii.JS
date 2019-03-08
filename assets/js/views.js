@@ -25,21 +25,19 @@ function changeView(v, t) {
 
 function loadViewContents(v, t) {
   $(".app").load("views/" + v + ".html", function() {
-    setTimeout(function(){
-      $( ".app" ).imagesLoaded( { background: true }, function() {
-        if (v === "menu") {
-          // append date
-          $(document).find( ".date" ).html( "<span> " + date + "</span>" );
-        }
+    $('.app').imagesLoaded( { background: '.app' }, function() {
+      if (v === "menu") {
+        // append date
+        $(document).find( ".date" ).html( "<span> " + date + "</span>" );
+      }
 
-        if (v === "settings-main") {
-          setTimeout(function(){
-            $( ".settings-navcontainer" ).addClass( "animate" );
-            $( ".settings-header" ).addClass( "animate" );
-            $( ".settings-footer" ).addClass( "animate" );
-          }, 300);
-        }
-      });
+      if (v === "settings-main") {
+        setTimeout(function(){
+          $( ".settings-navcontainer" ).addClass( "animate" );
+          $( ".settings-header" ).addClass( "animate" );
+          $( ".settings-footer" ).addClass( "animate" );
+        }, 300);
+      }
 
       currentView = v;
 
@@ -49,7 +47,7 @@ function loadViewContents(v, t) {
           $(".app").fadeIn( "fast", "linear" );
         }
       }
-    }, 300);
+    });
   });
 }
 
